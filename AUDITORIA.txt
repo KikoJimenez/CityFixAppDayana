@@ -1,0 +1,45 @@
+AUDITORÍA QA - CityFixApp (Dayana)
+
+Auditor: KikoJimenez
+Fecha: 2026-06-04
+Resultado: ✅ APROBADO - Todas las pruebas pasan en verde
+
+========================================
+ARQUITECTURA DE INFRAESTRUCTURA
+========================================
+
+Contenedor Docker
+- Imagen base: node:20-alpine (ligera y optimizada)
+- El contenedor instala dependencias con npm install
+- Al iniciar ejecuta automáticamente npm test
+
+Característica destacada
+Dayana usa --experimental-vm-modules de Node.js para correr Jest
+con soporte de ES Modules, lo que indica una configuración más
+avanzada que el estándar CommonJS.
+
+Conexión a Supabase
+- Conexión exitosa a proyecto activo de Supabase
+- Retorna datos reales con estructura completa:
+  id, title, category, votes, created_at
+
+========================================
+EVIDENCIA DE PRUEBAS
+========================================
+
+Test                                          Resultado
+Traer datos reales y validar estructura       ✅ PASS
+
+Datos reales obtenidos: 5 reportes
+Tiempo de ejecución: 1.808s
+Código de salida: 0
+
+========================================
+DATOS OBTENIDOS EN PRUEBA
+========================================
+
+- Hueco profundo en la calle 10         | Vías         | 5 votos
+- Poste de luz sin bombilla en el parque| Iluminación  | 2 votos
+- Acumulación de basura en la esquina   | Aseo         | 10 votos
+- Pavimento levantado por raíces        | Vías         | 3 votos
+- Lámpara parpadeando constantemente    | Iluminación  | 1 voto
